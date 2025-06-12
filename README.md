@@ -1,6 +1,7 @@
 # SplatMaster
 
 
+Whenever you go back to the main menu or start a new painting, the canvas resets so you always begin with a blank artboard.
 A simple browser-based prototype of the **SplatMaster** kids art game. Sling objects from a cartoon slingshot toward a framed artboard and make colorful splats! Save your creations to a local gallery. The interface is bright and playful to keep kids engaged.
 =======
 

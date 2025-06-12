@@ -13,6 +13,12 @@ let isDragging = false;
 let startX = 0;
 let startY = 0;
 
+  // clear current drawing when returning to the menu
+  splats = [];
+  draw();
+  // start with a blank canvas for a new masterpiece
+  splats = [];
+  draw();
 let currentX = 0;
 let currentY = 0;
 const slingshot = { x: 80, y: canvas.height - 120 };
@@ -115,6 +121,7 @@ function splat(x, y) {
   draw();
 }
 
+    img.alt = 'Saved artwork';
 function loadSplats() {
   for (const s of splats) {
     ctx.beginPath();
