@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.hidden {
+  display: none;
+}
+#menu, #game, #gallery {
+  text-align: center;
+  margin-top: 20px;
+}
+#canvas {
+  border: 1px solid #333;
+  margin-top: 10px;
+  cursor: crosshair;
+}
+#controls {
+  margin-bottom: 10px;
+}
+#images img {
+  width: 200px;
+  margin: 5px;
+  border: 1px solid #ccc;
+}

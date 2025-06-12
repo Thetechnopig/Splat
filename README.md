@@ -1,1 +1,6 @@
-# Splat
+# SplatMaster
+
+A simple browser-based prototype of the **SplatMaster** kids art game. Sling objects at a canvas and make colorful splats! Save your creations to a local gallery.
+
+## Running
+Open `index.html` in a modern web browser. Your artworks will be saved in your browser's local storage.
