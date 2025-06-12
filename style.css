@@ -1,7 +1,11 @@
 body {
+
   font-family: 'Comic Neue', 'Comic Sans MS', cursive;
   background: linear-gradient(135deg, #ffdeeb, #d0f4ff);
   min-height: 100vh;
+
+  font-family: Arial, sans-serif;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +19,7 @@ body {
   text-align: center;
   margin-top: 20px;
 }
+
 
 #game {
   display: flex;
@@ -37,10 +42,17 @@ body {
   cursor: crosshair;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background: #fff;
+
+#canvas {
+  border: 1px solid #333;
+  margin-top: 10px;
+  cursor: crosshair;
+
 }
 #controls {
   margin-bottom: 10px;
 }
+
 button {
   font-size: 1.2rem;
   background: #ffbf00;
@@ -65,4 +77,10 @@ select {
   border: 2px solid #ffbf00;
   border-radius: 10px;
   box-shadow: 2px 2px #888;
+
+#images img {
+  width: 200px;
+  margin: 5px;
+  border: 1px solid #ccc;
+
 }

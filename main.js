@@ -12,9 +12,11 @@ const imagesDiv = document.getElementById('images');
 let isDragging = false;
 let startX = 0;
 let startY = 0;
+
 let currentX = 0;
 let currentY = 0;
 const slingshot = { x: 80, y: canvas.height - 120 };
+
 let objects = {
   tomato: 'red',
   paintball: 'blue',
@@ -42,40 +44,66 @@ function randomInt(min, max) {
 
 canvas.addEventListener('mousedown', (e) => {
   isDragging = true;
+
   startX = slingshot.x;
   startY = slingshot.y;
   currentX = e.offsetX;
   currentY = e.offsetY;
+
+  startX = e.offsetX;
+  startY = e.offsetY;
+
 });
 
 canvas.addEventListener('mousemove', (e) => {
   if (isDragging) {
+
     currentX = e.offsetX;
     currentY = e.offsetY;
     draw();
+
+    draw();
+    ctx.beginPath();
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.strokeStyle = '#555';
+    ctx.stroke();
+
   }
 });
 
 canvas.addEventListener('mouseup', (e) => {
   if (isDragging) {
     isDragging = false;
+
     const dx = currentX - startX;
     const dy = currentY - startY;
     const endX = startX + dx * 2;
     const endY = startY + dy * 2;
     splat(endX, endY);
     draw();
+
+    const dx = e.offsetX - startX;
+    const dy = e.offsetY - startY;
+    const endX = startX + dx * 2;
+    const endY = startY + dy * 2;
+    splat(endX, endY);
+
   }
 });
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   drawArtboard();
   loadSplats();
   drawSlingshot();
   if (isDragging) {
     drawBand(currentX, currentY);
   }
+
+  loadSplats();
+
 }
 
 let splats = [];
@@ -95,6 +123,7 @@ function loadSplats() {
     ctx.fill();
   }
 }
+
 
 function drawSlingshot() {
   ctx.strokeStyle = '#8b4513';
@@ -125,6 +154,7 @@ function drawArtboard() {
   ctx.fillStyle = '#fff5e6';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
+
 
 function saveToGallery() {
   const data = canvas.toDataURL('image/png');
